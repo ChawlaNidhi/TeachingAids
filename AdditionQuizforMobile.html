@@ -35,8 +35,8 @@
         .forResult {
             font-size: 10vw; /* Scales with viewport width */
         }
-
-        button {
+        
+        .queButton {
             background-color: #37765D;
             color: white;
             padding: 10px 20px; /* Reduced padding */
@@ -49,7 +49,19 @@
             border: none;
             border-radius: 12px;
         }
-
+        .StartButtonClass{
+            background-color: #37765D;
+            color: white;
+            padding: 10px 20px; /* Reduced padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 8vw; /* Scales with viewport width */
+            margin: 14px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            
         input {
             background-color: #37765D;
             color: white;
@@ -86,8 +98,8 @@
                 '<label id="op"></label>' +
                 '<label id="n2"></label><br>' +
                 '<input type="text" id="ans"><br>' +
-                '<button onclick="checkans()">Check</button>' +
-                '<button onclick="genque()">Next</button>' +'<br>'+
+                '<button class="queButton" onclick="checkans()">Check</button>' +
+                '<button class="queButton" onclick="genque()">Next</button>' +'<br>'+
                 '<label id="result" class="forResult"></label>';
         }
 
@@ -112,8 +124,8 @@
     </script>
 <br><br><br>
 <div id="firstscreen" class="heading">
-      Addition1!<br><br>
-        <button id="startbutton" onclick="forStart(); genque();">Start</button>
+      Addition2!<br><br>
+        <button class="StartButtonClass" id="startbutton" onclick="forStart(); genque();">Start</button>
     </div>
 
     <div class="ques" id="QuesFrame">
