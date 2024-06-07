@@ -18,9 +18,7 @@
             flex-direction: column; /* Stack items vertically */
             align-items: center; /* Center items horizontally */
         }
-.forHeading{
-font-size:10vw;
-}
+
         .ques {
             background-color:lightblue;
           margin:auto
@@ -31,7 +29,7 @@ font-size:10vw;
         }
 
         .forResult {
-            font-size: 5vw; /* Scales with viewport width */
+            font-size: 10vw; /* Scales with viewport width */
         }
 
         button {
@@ -78,7 +76,7 @@ font-size:10vw;
              document.getElementById("bbody").style.color="white";
             document.getElementById("bbody").style.fontFamily="'Comic Sans MS', cursive, sans-serif";
             document.getElementById("QuesFrame").innerHTML =
-                '<label id="n1"></label>' +
+                '<br><label id="n1"></label>' +
                 '<label id="op"></label>' +
                 '<label id="n2"></label><br>' +
                 '<input type="text" id="ans"><br>' +
@@ -108,7 +106,7 @@ font-size:10vw;
     </script>
 <br><br><br>
 <div id="firstscreen" class="heading">
-      Addition2!<br>
+      Addition1!<br>
         <button id="startbutton" onclick="forStart(); genque();">Start</button>
     </div>
 
