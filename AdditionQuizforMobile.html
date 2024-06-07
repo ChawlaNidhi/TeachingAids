@@ -11,6 +11,7 @@
 
         .forBody {
             background: url("bg3.jpg");
+            
             background-size: cover;
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
@@ -21,6 +22,7 @@
 
         .ques {
             background-color:lightblue;
+           
             margin:auto
             color: white;
             width: 100vw; /* Relative to viewport width */
@@ -72,7 +74,7 @@
         function forStart() {
             document.getElementById("startbutton").style.display="none";
             document.getElementById("bbody").style.background="url('bg4.jpg')";
-            
+             document.getElementById("bbody").style.backgroundSize="cover";
             document.getElementById("firstscreen").style.color="brown";
              document.getElementById("bbody").style.color="white";
             
@@ -107,7 +109,7 @@
     </script>
 <br><br><br>
 <div id="firstscreen" class="heading">
-      Addition2!<br>
+      Addition1!<br>
         <button id="startbutton" onclick="forStart(); genque();">Start</button>
     </div>
 
