@@ -55,14 +55,13 @@ function genrand()
 return Math.floor(Math.random()*10);
 }
 function forStart(){
-count=1;
+count=0;
 document.getElementById("QuesFrame").innerHTML='<label id="n1"></label>' +
                                                 '<label id="op"></label>' +
                                                 '<label id="n2"></label><br>' +
                                                 '<input type="text" id="ans" >' +'<br>'+
                                                  '<button onclick="checkans()">Next</button><br>' +
-                                                '<label id="result" class="forResult"></label>'+
-                                                '<br><br>'+
+                                                '<label id="result" class="forResult"></label><br>'+
                                                 '<label id="mssg" class="forResult">Here will come your progress...</label>';
 }
 
@@ -81,7 +80,7 @@ function checkans(){
 var n3=n1+n2;
 var ans=parseFloat(document.getElementById("ans").value);
 if(n3==ans)
-{msg="Very Good! You have practised "+count+" questios till now";
+{msg="Very Good! You have practiced "+count+" question till now";
 document.getElementById("mssg").innerHTML=msg;
 genque();
 }
@@ -90,7 +89,7 @@ else
 }
 </script>
 
-<p class="heading" align="center"> Practice Your Skills!
+<p class="heading" align="center"> Practice Your Skillsssss!
 <br>
 <button onclick="forStart(),genque()">Start</button></p>
 
