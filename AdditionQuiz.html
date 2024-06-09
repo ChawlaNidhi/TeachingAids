@@ -49,22 +49,25 @@ input {
 </head>
 <body>
 <script>
-var n1,n2;
+var n1,n2,count;
 function genrand()
 {
 return Math.floor(Math.random()*10);
 }
 function forStart(){
+            count=1;
 document.getElementById("QuesFrame").innerHTML='<label id="n1"></label>' +
     '<label id="op"></label>' +
     '<label id="n2"></label><br>' +
-    '<input type="text" id="ans" >' +'<br>'+
+    '<input type="text" id="ans" >' +'<br>'
     
     '<button onclick="checkans()">Next</button><br>' +
-    '<label id="result" class="forResult"></label>';
+    '<label id="result" class="forResult"></label>'<br><br>+
+            '<label id="mssg" class="forResult">Here will come your progress...</label>';
 }
 
 function genque(){
+            count=count+1;
 n1=genrand();
 document.getElementById("n1").innerHTML=n1;
 n2=genrand();
@@ -78,13 +81,12 @@ function checkans(){
 var n3=n1+n2;
 var ans=parseFloat(document.getElementById("ans").value);
 if(n3==ans)
-{document.getElementById("result").innerHTML="Very Good!";
+{msg="Very Good! You have practised "+count+" questios till now";
+document.getElementById("mssg").innerHTML=msg;
 genque();
 }
 else
 {document.getElementById("result").innerHTML="Wrong. Try Again!"}
-
-
 }
 </script>
 
