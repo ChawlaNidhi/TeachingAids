@@ -11,17 +11,12 @@
 
         .forBody {
             background: url("bg7.jpg");
-            
             background-size: cover;
-          
-                
             align-items: center; /* Center items horizontally */
         }
 
         .ques {
-            
-           
-            margin:auto
+            margin:auto;
             color: white;
             width: 100vw; /* Relative to viewport width */
             height:100vh;
@@ -79,7 +74,6 @@
 <body id="bbody" class="forBody">
     <script>
         var n1, n2, count;
-        
         function genrand() {
             return Math.floor(Math.random() * 10);
         }
@@ -89,9 +83,7 @@
             document.getElementById("startbutton").style.display="none";
             document.getElementById("bbody").style.background="url('bg6.jpg')";
              document.getElementById("bbody").style.backgroundSize="cover";         
-            
-            
-            document.getElementById("firstscreen").style.color="brown";
+             document.getElementById("firstscreen").style.color="brown";
              document.getElementById("bbody").style.color="white";
             document.getElementById("firstscreen").innerHTML="Addition";
             document.getElementById("QuesFrame").innerHTML =
@@ -112,15 +104,15 @@
             document.getElementById("n2").innerHTML = n2;
             document.getElementById("op").innerHTML = "+";
             document.getElementById("ans").value = "";
-            document.getElementById("ans").innerHTML=" ";
+            document.getElementById("result").innerHTML=" ";
         }
 
         function checkans() {
             var n3 = n1 + n2;
             var ans = parseFloat(document.getElementById("ans").value);
             if (n3 == ans) {
-                msg="You have got +"count+" questions right";
-                document.getElementById("msgg").value = msg;
+                msg="You have got "+count+" questions right";
+                document.getElementById("msgg").innerHTML = msg;
                 genque();
             } else {
                 document.getElementById("result").innerHTML = "Wrong. Try Again!";
