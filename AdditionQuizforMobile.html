@@ -31,9 +31,11 @@
         }
 
         .forResult {
+            font-size: 5vw; /* Scales with viewport width */
+        }
+        .forMsg {
             font-size: 10vw; /* Scales with viewport width */
         }
-        
         .queButton {
             background-color: #37765D;
             color: white;
@@ -76,13 +78,14 @@
 </head>
 <body id="bbody" class="forBody">
     <script>
-        var n1, n2;
-
+        var n1, n2, count;
+        
         function genrand() {
             return Math.floor(Math.random() * 10);
         }
 
         function forStart() {
+            count=0;
             document.getElementById("startbutton").style.display="none";
             document.getElementById("bbody").style.background="url('bg6.jpg')";
              document.getElementById("bbody").style.backgroundSize="cover";         
@@ -96,25 +99,29 @@
                 '<label id="op"></label>' +
                 '<label id="n2"></label><br>' +
                 '<input type="text" id="ans"><br>' +
-                '<button class="queButton" onclick="checkans()">Check</button>' +
-                '<button class="queButton" onclick="genque()">Next</button>' +'<br>'+
-                '<label id="result" class="forResult"></label>';
+                '<button class="queButton" onclick="checkans()">Next</button>' +'<br>'+
+                '<label id="result" class="forResult"></label>'+
+                '<label id="msgg" class="forMsg"></label>';
         }
 
         function genque() {
+            count=count+1;
             n1 = genrand();
             document.getElementById("n1").innerHTML = n1;
             n2 = genrand();
             document.getElementById("n2").innerHTML = n2;
             document.getElementById("op").innerHTML = "+";
             document.getElementById("ans").value = "";
+            document.getElementById("ans").innerHTML=" ";
         }
 
         function checkans() {
             var n3 = n1 + n2;
             var ans = parseFloat(document.getElementById("ans").value);
             if (n3 == ans) {
-                document.getElementById("result").innerHTML = "Very Good!";
+                msg="You have got +"count+" questions right";
+                document.getElementById("msgg").value = msg;
+                genque();
             } else {
                 document.getElementById("result").innerHTML = "Wrong. Try Again!";
             }
