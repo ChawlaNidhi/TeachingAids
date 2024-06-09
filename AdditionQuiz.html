@@ -55,19 +55,19 @@ function genrand()
 return Math.floor(Math.random()*10);
 }
 function forStart(){
-            count=1;
+count=1;
 document.getElementById("QuesFrame").innerHTML='<label id="n1"></label>' +
-    '<label id="op"></label>' +
-    '<label id="n2"></label><br>' +
-    '<input type="text" id="ans" >' +'<br>'
-    
-    '<button onclick="checkans()">Next</button><br>' +
-    '<label id="result" class="forResult"></label>'<br><br>+
-            '<label id="mssg" class="forResult">Here will come your progress...</label>';
+                                                '<label id="op"></label>' +
+                                                '<label id="n2"></label><br>' +
+                                                '<input type="text" id="ans" >' +'<br>'
+                                                 '<button onclick="checkans()">Next</button><br>' +
+                                                '<label id="result" class="forResult"></label>'+
+                                                '<br><br>'+
+                                                '<label id="mssg" class="forResult">Here will come your progress...</label>';
 }
 
 function genque(){
-            count=count+1;
+count=count+1;
 n1=genrand();
 document.getElementById("n1").innerHTML=n1;
 n2=genrand();
