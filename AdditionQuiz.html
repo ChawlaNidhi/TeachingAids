@@ -15,7 +15,7 @@ background-size:cover;
 .ques{
 margin:50px auto;
 color: brown;
-width:300px;
+width:500px;
 font-size:50px;
 text-align:center;
 }
@@ -80,7 +80,7 @@ function checkans(){
 var n3=n1+n2;
 var ans=parseFloat(document.getElementById("ans").value);
 if(n3==ans)
-{msg="Very Good! You have practiced "+count+" question till now";
+{msg="You have practiced "+count+" question till now";
 document.getElementById("mssg").innerHTML=msg;
 genque();
 }
@@ -89,7 +89,7 @@ else
 }
 </script>
 
-<p class="heading" align="center"> Practice Your Skillsss!
+<p class="heading" align="center"> Practice Your Skills!
 <br>
 <button onclick="forStart(),genque()">Start</button></p>
 
