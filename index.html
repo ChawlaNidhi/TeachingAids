@@ -1,52 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>
-    Miss Chawla's Class
-  </title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Chawla's Class</title>
   <style>
-   
-    body{
-      background:url("bg9.avif");
-      background-size:cover;
-      font-size:6vw;
-      font-family:"Marker Felt", fantasy;
-      color:#A6250A;
-      }
-    .div1{
-      margin:auto;
-      width: 500px;
-      font-size:4vw;
-      font-family:"URW Chancery L", cursive;
-      color:#1E7E0B;
-    }
-    a:link{
-      color:#1E7E0B;
-    }
-    a:visited{
-      color:#D8240F;
+    body {
+      background: url("bg9.avif");
+      background-size: cover;
+      font-size: 6vw; /* Default font size */
+      font-family: "Marker Felt", fantasy;
+      color: #A6250A;
+      text-align: center;
     }
 
-     @media only screen and (max-width: 1500px) {
-  body {
-    color:black;
-  }
+    .div1 {
+      margin: auto;
+      width: 90%;
+      max-width: 500px;
+      font-size: 4vw; /* Default font size */
+      font-family: "URW Chancery L", cursive;
+      color: #1E7E0B;
+    }
+
+    a:link {
+      color: #1E7E0B;
+    }
+
+    a:visited {
+      color: #D8240F;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        font-size: 8vw; /* Increase font size for mobile devices */
+      }
+
+      .div1 {
+        font-size: 6vw; /* Increase font size for the div1 class on mobile devices */
+      }
     }
   </style>
-  </head>
-  <body>
-<p align="center"><br>
-  
-  
-    Welcome to Math Webpage.</p>
-    <div class="div1">
-    On which device are your working today?
+</head>
+<body>
+  <p>11Welcome to Math Webpage.</p>
+  <div class="div1">
+    On which device are you working today?
     <br>
-    <a href="computerchoice.html"> Computer</a> <br>
-   
-    <a href="mobilechoice.html"> Mobile</a>
-    
-    </div>
-  </body>
+    <a href="computerchoice.html">Computer</a>
+    <br>
+    <a href="mobilechoice.html">Mobile</a>
+  </div>
+</body>
 </html>
