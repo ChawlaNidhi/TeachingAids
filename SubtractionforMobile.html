@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Addition for Mobile</title>
+    <style>
+        .heading {
+            font-size: 15vw; /* Scales with viewport width */
+            color: green;
+            text-align: center; /* Center text */
+        }
+
+        .forBody {
+            background: url("bg7.jpg");
+            background-size: cover;
+            align-items: center; /* Center items horizontally */
+        }
+
+        .ques {
+            margin:auto;
+            color: white;
+            width: 100vw; /* Relative to viewport width */
+            height:100vh;
+            font-size: 15vw; /* Scales with viewport width */
+            text-align: center;
+            font-family:"'Comic Sans MS', cursive, sans-serif";
+        }
+
+        .forResult {
+            font-size: 5vw; /* Scales with viewport width */
+        }
+        .forMsg {
+            font-size: 10vw; /* Scales with viewport width */
+        }
+        .queButton {
+            background-color: #37765D;
+            color: white;
+            padding: 10px 20px; /* Reduced padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 8vw; /* Scales with viewport width */
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 12px;
+        }
+        .StartButtonClass{
+            background-color: #E5ACB6;
+            color:#065535;
+            padding: 10px 20px; /* Reduced padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20vw; /* Scales with viewport width */
+            margin: 30vh 2vw;
+            cursor: pointer;
+            border: none;
+            border-radius: 100px;}
+            
+        input {
+            background-color: #37765D;
+            color: white;
+            text-align: center;
+            width: 25vw; /* Relative to viewport width */
+            
+            font-size: 12vw; /* Scales with viewport width */
+            border: 1px dotted white;
+            border-radius: 12px;
+        }
+
+       
+    </style>
+</head>
+<body id="bbody" class="forBody">
+    <script>
+        var n1, n2, count;
+        function genrand() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        function forStart() {
+            count=0;
+            document.getElementById("startbutton").style.display="none";
+            document.getElementById("bbody").style.background="url('bg6.jpg')";
+             document.getElementById("bbody").style.backgroundSize="cover";         
+             document.getElementById("firstscreen").style.color="brown";
+             document.getElementById("bbody").style.color="white";
+            document.getElementById("firstscreen").innerHTML="Multipication";
+            document.getElementById("QuesFrame").innerHTML =
+                '<br><label id="n1"></label>' +
+                '<label id="op"></label>' +
+                '<label id="n2"></label><br>' +
+                '<input type="text" id="ans"><br>' +
+                '<button class="queButton" onclick="checkans()">Next</button>' +'<br>'+
+                '<label id="result" class="forResult"></label><br>'+
+                '<label id="msgg" class="forMsg"></label>';
+        }
+
+        function genque() {
+            count=count+1;
+            n1 = genrand();
+            document.getElementById("n1").innerHTML = n1;
+            n2 = genrand();
+            document.getElementById("n2").innerHTML = n2;
+            document.getElementById("op").innerHTML = "-";
+            document.getElementById("ans").value = "";
+            document.getElementById("result").innerHTML=" ";
+        }
+
+        function checkans() {
+            var n3 = n1 - n2;
+            var ans = parseFloat(document.getElementById("ans").value);
+            if (n3 == ans) {
+                msg="You have got "+count+" questions right";
+                document.getElementById("msgg").innerHTML = msg;
+                genque();
+            } else {
+                document.getElementById("result").innerHTML = "Wrong. Try Again!";
+            }
+        }
+    </script>
+<br><br><br>
+<div id="firstscreen" class="heading">
+      <br><br>
+        <button class="StartButtonClass" id="startbutton" onclick="forStart(); genque();">Let's Start</button>
+    </div>
+
+    <div class="ques" id="QuesFrame">
+    </div>
+</body>
+</html>
