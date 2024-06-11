@@ -1,0 +1,104 @@
+<html>
+<Head>
+<title>
+Math Addition
+</title>
+<style>
+.heading{
+font-size:50px;
+color:green;
+}
+body{
+background:url("bg3.jpg");
+background-size:cover;
+}
+.ques{
+margin:50px auto;
+color: brown;
+width:500px;
+font-size:50px;
+text-align:center;
+}
+.forResult{
+font-size:30px;}
+.formssg{
+font-size:40px;}
+button {
+            background-color: #4CAF50;
+            color: white; /* White text */
+            padding: 15px 32px; /* Padding inside the button */
+            text-align: center; /* Centered text */
+            text-decoration: none; /* Remove underline from text */
+            display: inline-block; /* Display as inline block */
+            font-size: 16px; /* Text size */
+            margin: 4px 2px; /* Margins around the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            border: none; /* Remove default border */
+            border-radius: 12px; /* Rounded corners */
+        }
+input {
+            background-color: lightgreen;
+            color: blue; /* White text */
+            text-align: center; /* Centered text */
+            width:100px; 
+            font-size: 40px; /* Text size */
+            border: none; /* Remove default border */
+            border-radius: 12px; /* Rounded corners */
+        }
+</style>
+</head>
+<body>
+<script>
+var n1,n2,count;
+function genrand()
+{
+return Math.floor(Math.random()*10);
+}
+function forStart(){
+count=0;
+document.getElementById("QuesFrame").innerHTML='<label id="n1"></label>' +
+                                                '<label id="op"></label>' +
+                                                '<label id="n2"></label><br>' +
+                                                '<input type="text" id="ans" >' +'<br>'+
+                                                 '<button onclick="checkans()">Next</button>' +
+                                                '<label id="result" class="forResult"></label><br>'+
+                                                '<label id="mssg" class="formssg">Here will come your progress...</label>';
+}
+
+function genque(){
+count=count+1;
+n1=genrand();
+n2=genrand();
+            if(n1>n2){
+            document.getElementById("n1").innerHTML=n1;
+            document.getElementById("n2").innerHTML=n2;}
+            else{
+            document.getElementById("n1").innerHTML=n2;
+            document.getElementById("n2").innerHTML=n1;}
+document.getElementById("op").innerHTML="/";
+document.getElementById("ans").value=" ";
+document.getElementById("result").innerHTML=" ";
+
+}
+function checkans(){
+var n3=n1/n2;
+var ans=parseFloat(document.getElementById("ans").value);
+if(n3==ans)
+{msg="You have practiced "+count+" question till now";
+document.getElementById("mssg").innerHTML=msg;
+genque();
+}
+else
+{document.getElementById("result").innerHTML="Wrong. Try Again!"}
+}
+</script>
+
+<p class="heading" align="center"> Practice Your Skills!
+<br>
+<button onclick="forStart(),genque()">Start</button></p>
+
+<div class="ques" id="QuesFrame">
+
+</div>
+</body>
+</html>
