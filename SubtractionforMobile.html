@@ -74,7 +74,7 @@
 </head>
 <body id="bbody" class="forBody">
     <script>
-        var n1, n2, count;
+        var n1, n2,n3, count;
         function genrand() {
             return Math.floor(Math.random() * 10);
         }
@@ -100,16 +100,25 @@
         function genque() {
             count=count+1;
             n1 = genrand();
-            document.getElementById("n1").innerHTML = n1;
             n2 = genrand();
-            document.getElementById("n2").innerHTML = n2;
+            if(n1>n2){
+                document.getElementById("n1").innerHTML = n1;
+                document.getElementById("n2").innerHTML = n2;}
+            else{
+                
+                document.getElementById("n1").innerHTML = n2;
+                document.getElementById("n2").innerHTML = n1;}
             document.getElementById("op").innerHTML = "-";
             document.getElementById("ans").value = "";
             document.getElementById("result").innerHTML=" ";
         }
 
         function checkans() {
-            var n3 = n1 - n2;
+            if(n1>n2){
+                n3 = n1 - n2;}
+            else{
+                n3=n2-n1;
+            }
             var ans = parseFloat(document.getElementById("ans").value);
             if (n3 == ans) {
                 msg="You have got "+count+" questions right";
