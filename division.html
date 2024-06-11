@@ -49,7 +49,7 @@ input {
 </head>
 <body>
 <script>
-var n1,n2,count;
+var n1,n2,n3,count;
 function genrand()
 {
 return Math.floor(Math.random()*10);
@@ -81,7 +81,10 @@ document.getElementById("result").innerHTML=" ";
 
 }
 function checkans(){
-var n3=n1/n2;
+            if(n1>n2){
+                         n3=n1/n2;}
+            else{
+                        n3=n2/n1;}
 var ans=parseFloat(document.getElementById("ans").value);
 if(n3==ans)
 {msg="You have practiced "+count+" question till now";
